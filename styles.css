@@ -1,0 +1,43 @@
+body {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 1%;
+    text-align: center;
+    color: #1D2873;
+}
+
+.TC {
+    text-align: center;
+    list-style-type: none;
+    margin: none;
+}
+
+.TC li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
+
+.tcList {
+    display: flex;
+    justify-content: center;
+    background-color: #1D2873;
+}
+
+#graph {
+    margin-top: 30px;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    margin: 5px;
+}
+
+h1 {
+    margin-top: 0;
+}
