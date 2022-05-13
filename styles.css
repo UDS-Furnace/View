@@ -5,6 +5,7 @@ body {
     padding: 1%;
     text-align: center;
     color: #1D2873;
+    justify-content: center;
 }
 
 .TC {
@@ -29,8 +30,9 @@ body {
 #graph {
     margin-top: 30px;
     height: 600px;
-    width: 100%;
-    display: flex;
+    margin-left: 10%;
+    width: 80%;
+    display: block;
     justify-content: center;
 }
 
