@@ -2,7 +2,7 @@
 
 
 from github import Github
-g = Github("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")
+g = Github("*****")
 
 repo = g.get_user().get_repo("DataLogger")
 all_files = []
