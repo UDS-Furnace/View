@@ -90,10 +90,14 @@ function makeChart(csvFile) {
   //document.getElementById("TC5").textContent=tc5Data[tc5Data.length-1];
   document.getElementById("TC6").textContent=tc6Data[tc6Data.length-1];
   document.getElementById("LastRead").textContent=timeLabels[timeLabels.length-1];
-  
 }
 
 // Request data using D3
-d3
-  .csv("./OnlineLog.csv")
-  .then(makeChart);
+function getCSV() { 
+  d3
+    .csv("./OnlineLog.csv?" + new Date().getTime())
+    .then(makeChart);
+  setTimeout(getCSV, 60000);
+}
+
+getCSV();
