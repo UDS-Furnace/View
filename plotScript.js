@@ -1,9 +1,10 @@
 function makeChart(csvFile) {
-  timeLabels = csvFile.map(function(d) {
-      var times = d.Time;
-      times = timeLabels.map(function(t) => t.split('-'); //Put the date and time on two lines for the graph
-      return times;  
-  });
+  var timeLabels = csvFile.map(function(d) {
+      return d.Time;
+      });
+  timeLabels = timeLabels.map(function(t) { 
+      return t.split('-'); //Put the date and time on two lines for the graph
+      }); 
   
   var tc1Data = csvFile.map(function(d) {
     return d.Temp1;
