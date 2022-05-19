@@ -1,8 +1,10 @@
 function makeChart(csvFile) {
-
-  var timeLabels = csvFile.map(function(d) {
-    return d.Time;
+  timeLabels = csvFile.map(function(d) {
+      var times = d.Time;
+      times = timeLabels.map(function(t) => t.split('-'); //Put the date and time on two lines for the graph
+      return times;  
   });
+  
   var tc1Data = csvFile.map(function(d) {
     return d.Temp1;
   });
@@ -31,7 +33,15 @@ function makeChart(csvFile) {
       maintainAspectRatio: false,
       legend: {
         display: true
-      }
+      },
+      scales: {
+            xAxes: [{
+                ticks: {
+                    maxRotation: 0,
+                    minRotation: 0
+                }
+            }]
+        }
     },
     data: {
       labels: timeLabels,
