@@ -1,11 +1,22 @@
 function makeChart(csvFile) {
+
+  //Get the time column
   var timeLabels = csvFile.map(function(d) {
       return d.Time;
       });
+
+
+  //If the file has not changed we don't need to refresh the window
+  if(timeLabels[timeLabels.length-1] === document.getElementById("LastRead").textContent) {
+    return;
+  };
+
+  //Put the date and time on two lines for the graph
   timeLabels = timeLabels.map(function(t) { 
-      return t.split('-'); //Put the date and time on two lines for the graph
+      return t.split('-'); 
       }); 
   
+  //Get all the TC columns
   var tc1Data = csvFile.map(function(d) {
     return d.Temp1;
   });
@@ -25,7 +36,8 @@ function makeChart(csvFile) {
     return d.Temp6;
   })
   
-  var tcHData = new Array(tc1Data.length).fill("1300"); //make the high temp array since it is not in the file
+  //Create an array for the high temperature warning
+  var tcHData = new Array(tc1Data.length).fill("1300");
   
 
   var chart = new Chart('chart', {
@@ -35,6 +47,8 @@ function makeChart(csvFile) {
       legend: {
         display: true
       },
+
+      //Set the rotation of the X axis labels
       scales: {
             xAxes: [{
                 ticks: {
@@ -44,6 +58,7 @@ function makeChart(csvFile) {
             }]
         }
     },
+
     data: {
       labels: timeLabels,
       datasets: [
@@ -94,6 +109,7 @@ function makeChart(csvFile) {
     }
   });
   
+  //Update the numeric text at the top of the screen
   document.getElementById("TC1").textContent=tc1Data[tc1Data.length-1];
   document.getElementById("TC2").textContent=tc2Data[tc2Data.length-1];
   document.getElementById("TC3").textContent=tc3Data[tc3Data.length-1];
@@ -108,7 +124,10 @@ function getCSV() {
   d3
     .csv("./OnlineLog.csv?" + new Date().getTime())
     .then(makeChart);
+
+  //Run the program every 60s
   setTimeout(getCSV, 60000);
 }
 
+//Initial call
 getCSV();
