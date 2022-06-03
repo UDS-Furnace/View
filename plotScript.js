@@ -13,7 +13,7 @@ function makeChart(csvFile) {
 
   //Put the date and time on two lines for the graph
   timeLabels = timeLabels.map(function(t) { 
-      return t.split('-'); 
+      return t.split(' - '); 
       }); 
   
   //Get all the TC columns
