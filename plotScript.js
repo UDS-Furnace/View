@@ -116,7 +116,7 @@ function makeChart(csvFile) {
   document.getElementById("TC4").textContent=tc4Data[tc4Data.length-1];
   //document.getElementById("TC5").textContent=tc5Data[tc5Data.length-1];
   document.getElementById("TC6").textContent=tc6Data[tc6Data.length-1];
-  document.getElementById("LastRead").textContent=timeLabels[timeLabels.length-1];
+  document.getElementById("LastRead").textContent=d.Time[timeLabels.length-1];
 }
 
 // Request data using D3
