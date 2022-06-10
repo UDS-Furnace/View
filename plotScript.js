@@ -9,7 +9,7 @@ function makeChart(csvFile) {
   //If the file has not changed we don't need to refresh the window
   console.log(timeLabels[timeLabels.length-1]);
   console.log(document.getElementById("LastRead").textContent);
-  if(timeLabels[timeLabels.length-1] === document.getElementById("LastRead").textContent) {
+  if(timeLabels[timeLabels.length-1] === document.getElementById("LastRead").textContent.replace(',',' - ')) {
     return;
   };
 
