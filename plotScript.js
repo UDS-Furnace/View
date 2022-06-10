@@ -107,13 +107,13 @@ function makeChart(csvFile) {
           borderColor: "#AA00AA",
           label: "TC6"
         },
-        {
-          data: tcHData,
-          fill: true,
-          borderColor: "#00B366",
-          label: "HIGH",
-          pointStyle: "line"
-        },
+        //{
+          //data: tcHData,
+          //fill: true,
+          //borderColor: "#00B366",
+          //label: "HIGH",
+          //pointStyle: "line"
+        //},
       ]
     }
   });
