@@ -29,9 +29,6 @@ function makeChart(csvFile) {
   var tc4Data = csvFile.map(function(d) {
     return d.Temp4;
   })
- /* var tc5Data = csvFile.map(function(d) {
-    return d.Temp5;
-  }) */
   var tc6Data = csvFile.map(function(d) {
     return d.Temp6;
   })
@@ -92,15 +89,9 @@ function makeChart(csvFile) {
         {
           data: tc4Data,
           fill: false,
-          borderColor: "#444",
+          borderColor: "#00B366",
           label: "TC4"
         },
-        /*{
-          data: tc5Data,
-          fill: false,
-          borderColor: "#00B366",
-          label: "TC5"
-        },*/
         {
           data: tc6Data,
           fill: false,
