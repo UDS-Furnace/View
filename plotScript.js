@@ -121,5 +121,19 @@ function getCSV() {
   setTimeout(getCSV, 60000);
 }
 
+// ~~~~~Dark mode~~~~~
+document.getElementById("title").addEventListener("click", function(){
+    var currBCol = document.body.style.backgroundColor;
+    var newBCol = "#222";
+    var newTCol = "#a2aeff";
+    
+    if (currBCol === "rgb(34, 34, 34)") {
+        newBCol = "#FFF";
+        newTCol = "#1D2873";
+    }
+    document.body.style.backgroundColor = newBCol;
+    document.body.style.color = newTCol;
+});
+
 //Initial call
 getCSV();
