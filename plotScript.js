@@ -37,12 +37,12 @@ function makeChart(csvFile) {
   var tcHData = new Array(tc1Data.length).fill("1300");
   
   //Update the numeric text at the top of the screen
-  document.getElementById("TC1").textContent=tc1Data[tc1Data.length-1].padStart(4,'0');
-  document.getElementById("TC2").textContent=tc2Data[tc2Data.length-1].padStart(4,'0');
-  document.getElementById("TC3").textContent=tc3Data[tc3Data.length-1].padStart(4,'0');
-  document.getElementById("TC4").textContent=tc4Data[tc4Data.length-1].padStart(4,'0');
+  document.getElementById("TC1").textContent=tc1Data[tc1Data.length-1].padStart(6,'0');
+  document.getElementById("TC2").textContent=tc2Data[tc2Data.length-1].padStart(6,'0');
+  document.getElementById("TC3").textContent=tc3Data[tc3Data.length-1].padStart(6,'0');
+  document.getElementById("TC4").textContent=tc4Data[tc4Data.length-1].padStart(6,'0');
   //document.getElementById("TC5").textContent=tc5Data[tc5Data.length-1];
-  document.getElementById("TC6").textContent=tc6Data[tc6Data.length-1].padStart(4,'0');
+  document.getElementById("TC6").textContent=tc6Data[tc6Data.length-1].padStart(6,'0');
   document.getElementById("LastRead").textContent=timeLabels[timeLabels.length-1];
   
   
