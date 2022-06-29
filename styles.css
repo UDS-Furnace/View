@@ -13,6 +13,7 @@ body {
     text-align: center;
     list-style-type: none;
     margin: none;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .TC li {
@@ -20,7 +21,6 @@ body {
     font-size: 20px;
     padding: 5px 20px;
     color: white;
-    font-family: 'Roboto Mono', monospace;
 }
 
 #TC5 {
