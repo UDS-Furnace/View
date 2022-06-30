@@ -32,23 +32,24 @@ function makeChart(csvFile) {
   var tc6Data = csvFile.map(function(d) {
     return d.Temp6;
   })
-  
-  //Create an array for the high temperature warning
-  var tcHData = new Array(tc1Data.length).fill("1300");
-  
+    
   //Update the numeric text at the top of the screen
   document.getElementById("TC1").textContent=tc1Data[tc1Data.length-1].padStart(6,'0');
   document.getElementById("TC2").textContent=tc2Data[tc2Data.length-1].padStart(6,'0');
   document.getElementById("TC3").textContent=tc3Data[tc3Data.length-1].padStart(6,'0');
   document.getElementById("TC4").textContent=tc4Data[tc4Data.length-1].padStart(6,'0');
-  //document.getElementById("TC5").textContent=tc5Data[tc5Data.length-1];
   document.getElementById("TC6").textContent=tc6Data[tc6Data.length-1].padStart(6,'0');
   document.getElementById("LastRead").textContent=timeLabels[timeLabels.length-1];
   
   
-  var chart = new Chart('chart', {
+ const chart = new Chart(document.getElementById('myChart'), {
     type: "line",
     options: {
+      interaction: {
+          intersect: false,
+          mode: 'index',
+          axis: 'x'
+      },
       maintainAspectRatio: false,
       legend: {
         display: true
@@ -56,14 +57,14 @@ function makeChart(csvFile) {
 
       //Set the rotation of the X axis labels
       scales: {
-            xAxes: [{
-                ticks: {
-                    maxRotation: 0,
-                    minRotation: 0
+          x: {
+              ticks: {
+                maxRotation: 0,
+                minRotation: 0
                 }
-            }]
-        }
-    },
+          }
+      }
+  },
 
     data: {
       labels: timeLabels,
@@ -72,39 +73,37 @@ function makeChart(csvFile) {
           data: tc1Data,
           fill: false,
           borderColor: "#FF0000",
+          backgroundColor: "#FF0000",
           label: "TC1"
         },
         {
           data: tc2Data,
           fill: false,
           borderColor: "#FFAA00",
+          backgroundColor: "#FFAA00",
           label: "TC2"
         },
         {
           data: tc3Data,
           fill: false,
           borderColor: "#365BB0",
+          backgroundColor: "#365BB0",
           label: "TC3"
         },
         {
           data: tc4Data,
           fill: false,
           borderColor: "#00B366",
+          backgroundColor: "#00B366",
           label: "TC4"
         },
         {
           data: tc6Data,
           fill: false,
           borderColor: "#AA00AA",
+          backgroundColor: "#AA00AA",
           label: "TC6"
         },
-        //{
-          //data: tcHData,
-          //fill: true,
-          //borderColor: "#00B366",
-          //label: "HIGH",
-          //pointStyle: "line"
-        //},
       ]
     }
   });
@@ -133,6 +132,7 @@ document.getElementById("title").addEventListener("click", function(){
     }
     document.body.style.backgroundColor = newBCol;
     document.body.style.color = newTCol;
+    
 });
 
 //Initial call
