@@ -99,7 +99,7 @@ function buildChart(csvFile) {
 
 //Getting CSV and building plot
 function getCSV() { 
-    var url = "./OnlineLog.csv";
+    var url = "./OnlineLog.csv?" + new Date().getTime();
 
     var request = new XMLHttpRequest();  
     request.open("GET", url, false);   
